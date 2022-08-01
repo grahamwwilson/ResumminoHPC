@@ -43,8 +43,14 @@ PROCESS=${3:-N2C1Plus}
 BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-Job-${SLURM_ARRAY_TASK_ID}
 
 # Make sure GSL is found
-source ${GITDIR}/setup.sh
-echo $LD_LIBRARY_PATH
+#source ${GITDIR}/setup.sh
+echo ${LD_LIBRARY_PATH}
+# Adding GSL to library path
+echo 'Adding GSL to library path'
+# Needed for GSL library
+WORKG=/panfs/pfs.local/work/wilson/gwwilson
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$WORKG/lib
+echo ${LD_LIBRARY_PATH}
 
 mkdir ${BRDIR}
 cd ${BRDIR}

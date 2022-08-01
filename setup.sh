@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Do source ./setup.sh to make this work
 #
@@ -12,4 +11,3 @@ echo $LD_LIBRARY_PATH
 WORKG=/panfs/pfs.local/work/wilson/gwwilson
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORKG/lib
 
-exit
