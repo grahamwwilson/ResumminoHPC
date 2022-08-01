@@ -15,9 +15,7 @@
 #SBATCH --output=resummino_%A_%a.log  # Standard output and error log
 #SBATCH --error=resummino_%A_%a.err   # Standard output and error log
 
-# Center-of-mass energy (now a command line argument to each job)
-# default value if not specified is 13000 GeV
-# ECM=${1:-13000}
+# Some environment stuff
 
 
 # Note currently the batch job does NOT yet change the center-of-mass energy from 13 TeV
@@ -36,17 +34,17 @@ echo "SLURM_ARRAY_TASK_ID: "${SLURM_ARRAY_TASK_ID}
 # It is assumed here that you cloned into your $WORK directory (/panfs/pfs.local/work/wilson/$USER
 GITDIR=$WORK/ResumminoHPC
 SLHADIR=$WORK/MyProspinoStuff/SLHAFiles
-
 # Directory where the executable resides
 EXEDIR=/panfs/pfs.local/work/wilson/gwwilson/Resummino/ResumminoInstall/bin
-
 # Here we use ${SLHADIR}/${SLHA}.slha as the input SLHA file
 SLHA=${2:-Higgsinos_250.0-235.0-220.0}
-
 PROCESS=${3:-N2C1Plus}
-
 # Directory to run batch job from (Batch Run DIRectory)
 BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-Job-${SLURM_ARRAY_TASK_ID}
+
+# Make sure GSL is found
+source ${GITDIR}/setup.sh
+echo $LD_LIBRARY_PATH
 
 mkdir ${BRDIR}
 cd ${BRDIR}
@@ -62,6 +60,9 @@ then
 fi
 
 cp ${GITDIR}/${PROCESS}.in InputCards.in
+
+# Check whether all shared object libraries are resolved
+ldd ${EXEDIR}/resummino
 
 ${EXEDIR}/resummino <InputCards.in
 
