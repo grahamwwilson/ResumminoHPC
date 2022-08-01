@@ -9,7 +9,8 @@
 # 3: MC1
 # 4: MN1
 # 5: PROCESS   (Currently either N2C1Plus or N2C1Minus)
-# 6: PDFSET    (Currently CT14 is supported)
+# 6: PDFSETLO  (Currently CT14lo)
+# 7: PDFSETNLO (Currently CT14nlo)
 #
 # Please change E-mail to your own E-mail or turn that feature off!
 #
@@ -24,7 +25,7 @@
 #SBATCH --output=resummino_%A_%a.log  # Standard output and error log
 #SBATCH --error=resummino_%A_%a.err   # Standard output and error log
 
-ECM=${1:-13000}
+
 
 pwd
 CWD=$(pwd)
@@ -45,6 +46,8 @@ SLHADIR=$WORK/MyProspinoStuff/SLHAFiles
 # Directory where the installed Resummino executable resides
 EXEDIR=/panfs/pfs.local/work/wilson/gwwilson/Resummino/ResumminoInstall/bin
 
+# Center-of-mass energy in GeV specified as an integer
+ECM=${1:-13000}
 # The electroweakino masses (should be specified with trailing .0)
 MN2=${2:-250.0}
 MC1=${3:-235.0}
@@ -57,9 +60,10 @@ echo 'New masses = '${NMN2},${NMC1},${NMN1}
 
 PROCESS=${5:-N2C1Plus}
 
-# Note not all LHAPDF sets are likely available.
-# Check in 
+# Note most LHAPDF sets are not installed.
+# Check 
 # /panfs/pfs.local/work/wilson/gwwilson/Resummino/resummino-releases/build/lhapdf-prefix/share/LHAPDF 
+# to see what is currently available.
 
 # Specify PDF set
 PDFSETLO=${6:-CT14lo}
