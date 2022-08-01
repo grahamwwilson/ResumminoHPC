@@ -24,6 +24,7 @@ hostname
 date
 echo $HOME
 echo $WORK
+echo "SLURM_ARRAY_JOB_ID: "${SLURM_ARRAY_JOB_ID}
 echo "SLURM_ARRAY_TASK_ID: "${SLURM_ARRAY_TASK_ID}
 
 # Main directory for the git based code etc.
@@ -37,7 +38,7 @@ EXEDIR=/panfs/pfs.local/work/wilson/gwwilson/Resummino/ResumminoInstall/bin
 SLHA=${2:-Higgsinos_250.0-235.0-220.0}
 PROCESS=${3:-N2C1Plus}
 # Directory to run batch job from (Batch Run DIRectory)
-BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-Job-${SLURM_ARRAY_TASK_ID}
+BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-Job-${SLURM_ARRAY_JOB_ID}-${SLURM_ARRAY_TASK_ID}
 
 # Make sure GSL is found
 echo ${LD_LIBRARY_PATH}
