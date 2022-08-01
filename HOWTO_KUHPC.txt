@@ -5,8 +5,8 @@ HOWTO run Resummino in batch on KU HPC.
 3. git clone https://github.com/grahamwwilson/ResumminoHPC.git   # code base
 4. mkdir Resummino_Launch                  # for launch script and job logs
 5. cd Resummino_Launch
-6. cp $WORK/ResumminoHPC/launch-hw.sh .    # Starting example 
-7. Edit the underlying script (ResumminoHPC/run-hw.sh) so that it does not send ME E-mail
-8 ./launch-hw.sh                           # This submits the basic script (ResumminoHPC/run-hw.sh) to the batch system
+6. cp $WORK/ResumminoHPC/launch-N2C1.sh .    # Starting example 
+7. Edit the underlying script (ResumminoHPC/run-N2C1.sh) so that it does not send ME E-mail
+8 ./launch-N2C1.sh                           # This submits the basic script (ResumminoHPC/run-N2C1.sh) to the batch system
 
 Graham, AUG-01-2022.

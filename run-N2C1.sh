@@ -1,6 +1,8 @@
 #!/bin/bash
 # 
-# Simple starting example using standard input files
+# run-N2C1.sh
+#
+# Here we edit the SLHA file on the fly.
 #
 # Please change E-mail to your own E-mail or turn that feature off!
 #
@@ -34,9 +36,17 @@ GITDIR=$WORK/ResumminoHPC
 SLHADIR=$WORK/MyProspinoStuff/SLHAFiles
 # Directory where the executable resides
 EXEDIR=/panfs/pfs.local/work/wilson/gwwilson/Resummino/ResumminoInstall/bin
-# Here we use ${SLHADIR}/${SLHA}.slha as the input SLHA file
-SLHA=${2:-Higgsinos_250.0-235.0-220.0}
-PROCESS=${3:-N2C1Plus}
+
+MN2=${2:-250.0}
+MC1=${3:-235.0}
+MN1=${4:-220.0}
+SLHA=Higgsinos_${MN2}-${MC1}-${MN1}
+NMN2=${MN2}E+00
+NMC1=${MC1}E+00
+NMN1=${MN1}E+00
+echo 'New masses = '${NMN2},${NMC1},${NMN1}
+
+PROCESS=${5:-N2C1Plus}
 # Directory to run batch job from (Batch Run DIRectory)
 BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-Job-${SLURM_ARRAY_JOB_ID}-${SLURM_ARRAY_TASK_ID}
 
@@ -57,9 +67,15 @@ pwd
 
 SLHAFILE=myslha.in
 
+# First copy over template slha file to batch directory
+cp ${SLHADIR}/higgsino_slha_C1C1_V2.in ${SLHA}.slha
+
+# Now replace the values appropriately
+sed -i -e "s/{MN2}/${NMN2}/g" -e "s/{MC1}/${NMC1}/g" -e "s/{MN1}/${NMN1}/g" ${SLHA}.slha
+
 if [ ! -e ${SLHAFILE} ]
 then
-   ln -s ${SLHADIR}/${SLHA}.slha ${SLHAFILE}
+   ln -s ${SLHA}.slha ${SLHAFILE}
 fi
 
 cp ${GITDIR}/${PROCESS}.in My-${PROCESS}.in
