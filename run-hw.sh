@@ -70,7 +70,7 @@ cp ${GITDIR}/${PROCESS}.in InputCards.in
 # Check whether all shared object libraries are resolved
 ldd ${EXEDIR}/resummino
 
-${EXEDIR}/resummino InputCards.in
+${EXEDIR}/resummino InputCards.in >job.out
 
 # Clean up - remove the symbolic links
 #rm $SLHAFILE
