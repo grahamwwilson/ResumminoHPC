@@ -15,9 +15,6 @@
 #SBATCH --output=resummino_%A_%a.log  # Standard output and error log
 #SBATCH --error=resummino_%A_%a.err   # Standard output and error log
 
-# Some environment stuff
-
-
 # Note currently the batch job does NOT yet change the center-of-mass energy from 13 TeV
 ECM=13000
 
@@ -43,7 +40,6 @@ PROCESS=${3:-N2C1Plus}
 BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-Job-${SLURM_ARRAY_TASK_ID}
 
 # Make sure GSL is found
-#source ${GITDIR}/setup.sh
 echo ${LD_LIBRARY_PATH}
 # Adding GSL to library path
 echo 'Adding GSL to library path'
@@ -65,15 +61,12 @@ then
    ln -s ${SLHADIR}/${SLHA}.slha ${SLHAFILE}
 fi
 
-cp ${GITDIR}/${PROCESS}.in InputCards.in
+cp ${GITDIR}/${PROCESS}.in My-${PROCESS}.in
 
 # Check whether all shared object libraries are resolved
 ldd ${EXEDIR}/resummino
 
-${EXEDIR}/resummino InputCards.in >job.out
-
-# Clean up - remove the symbolic links
-#rm $SLHAFILE
+${EXEDIR}/resummino My-${PROCESS}.in >job.out
 
 cd ${CWD}
 
