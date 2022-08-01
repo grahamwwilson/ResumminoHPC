@@ -62,12 +62,11 @@ PROCESS=${5:-N2C1Plus}
 # /panfs/pfs.local/work/wilson/gwwilson/Resummino/resummino-releases/build/lhapdf-prefix/share/LHAPDF 
 
 # Specify PDF set
-PDFSET=${6:-CT14}
-PDFSETLO=${PDFSET}lo
-PDFSETNLO=${PDFSET}nlo
+PDFSETLO=${6:-CT14lo}
+PDFSETNLO=${7:-CT14nlo}
 
 # Directory to run batch job from (Batch Run DIRectory)
-BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-${PDFSET}-Job-${SLURM_ARRAY_JOB_ID}
+BRDIR=$WORK/ResumminoOut/${PROCESS}-${SLHA}-${ECM}-${PDFSETNLO}-Job-${SLURM_ARRAY_JOB_ID}
 
 # Make sure GSL is found
 echo ${LD_LIBRARY_PATH}
