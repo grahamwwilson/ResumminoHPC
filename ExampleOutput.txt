@@ -1,0 +1,54 @@
+LHC SUSY XS numbers (NLO+NLL) - supposedly "an envelope of CTEQ6.6 and MSTW2008nlo90cl"
+N2C1Minus:  0.08037 pb (5.891%)
+N2C1Plus:   0.1554  pb (3.841%)
+
+[gwwilson@r20r20n02 ResumminoOut]$ grep -A3 "Results" */job.out
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317652/job.out:Results:
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317652/job.out-LO = (6.8716000e-02 +- 6.5278313e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317652/job.out-NLO = (8.0285914e-02 +- 8.3951097e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317652/job.out-NLO+NLL = (7.9508012e-02 +- 8.4752224e-05) pb
+--
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317787/job.out:Results:
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317787/job.out-LO = (6.4613225e-02 +- 6.1308289e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317787/job.out-NLO = (8.1809585e-02 +- 8.5036542e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317787/job.out-NLO+NLL = (8.1023761e-02 +- 8.5681329e-05) pb
+--
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317799/job.out:Results:
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317799/job.out-LO = (6.7122113e-02 +- 6.4412732e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317799/job.out-NLO = (7.8446481e-02 +- 8.2864896e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317799/job.out-NLO+NLL = (7.7677621e-02 +- 8.3368484e-05) pb
+--
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317796/job.out:Results:
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317796/job.out-LO = (6.3843644e-02 +- 6.0931385e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317796/job.out-NLO = (8.3763466e-02 +- 8.3614915e-05) pb
+N2C1Minus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317796/job.out-NLO+NLL = (8.2945174e-02 +- 8.4283960e-05) pb
+--
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317651/job.out:Results:
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317651/job.out-LO = (1.3319325e-01 +- 1.4105637e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317651/job.out-NLO = (1.5585270e-01 +- 1.7043037e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT10nlo-Job-36317651/job.out-NLO+NLL = (1.5467723e-01 +- 1.7083093e-04) pb
+--
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317786/job.out:Results:
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317786/job.out-LO = (1.3062914e-01 +- 1.3994270e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317786/job.out-NLO = (1.5822087e-01 +- 1.7231773e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-CT14nlo-Job-36317786/job.out-NLO+NLL = (1.5704248e-01 +- 1.7259787e-04) pb
+--
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317798/job.out:Results:
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317798/job.out-LO = (1.3150349e-01 +- 1.3998265e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317798/job.out-NLO = (1.5393487e-01 +- 1.6899051e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-cteq66-Job-36317798/job.out-NLO+NLL = (1.5276627e-01 +- 1.6932293e-04) pb
+--
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317793/job.out:Results:
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317793/job.out-LO = (1.2374411e-01 +- 1.3085709e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317793/job.out-NLO = (1.5823069e-01 +- 1.7070573e-04) pb
+N2C1Plus-Higgsinos_250.0-225.0-200.0-13000-MSTW2008nlo90cl-Job-36317793/job.out-NLO+NLL = (1.5703345e-01 +- 1.7095889e-04) pb
+
+So, my estimate of the "envelope" for the CTEQ6.6/MSTW2008nlo90cl is:
+N2C1Minus:  [7.76776e-2, 8.29452e-2] giving a mid-point value of  8.031e-2 pb with an error of 3.28% (taking the spread/2.)
+N2C1Plus:   [1.52766e-1, 1.57033e-1]    "                         1.5490e-1 pb with an error of 1.38%.
+
+So central values are pretty consistent (differ in the 4th digit) but the errors quoted by the LHC SUSY XS group are 
+quite a bit bigger. Maybe there is some way to run not just with central values for the pdfs.
+
+  
+
